@@ -11,4 +11,4 @@
 - Users & Groups
 
 ### Worth Reading
-- [How Does a Segmentation Fault Work Under The Hood](https://unix.stackexchange.com/questions/257598/how-does-a-segmentation-fault-work-under-the-hood) It explains alot of stuff about how the relationship between kernel, hardware and user space software.
+- [How Does a Segmentation Fault Work Under The Hood](https://unix.stackexchange.com/questions/257598/how-does-a-segmentation-fault-work-under-the-hood) It explains alot of stuff about the relationship between kernel, hardware and user space software.
