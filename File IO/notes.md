@@ -1,0 +1,14 @@
+- Use **open()** **read()** **write()** to do file operations.
+- Use **close()** to remove file descriptor from process's file table.
+- **write()** does not gurantee writing to physical disk but data is stored in a buffer in kernel to be written later when kernel sees it's optimal.
+- use **fsync()** or **fdatasync()** to make sure buffered data of a file is written to disk.
+- use **sync()** to ensure all buffered data is written to disk.
+- use append mode when writing to avoid race conditions.
+- Do not exceed `SSIZE_MAX` when writing for a single chnunk of data.
+- use direct IO to avoid any caching and to read/write directly to disk. This makes all reads/writes synchronized, and they will block until the operation is done.
+- use **lseek()** to change current file position or to get current file position.
+- use **pread()** and **pwrite()** instead of **lseek()** to avoid race conditions, and also to to write to a specified location without changing current file position.
+- When you write to a position past file's end it will pad this gap with zeros, this is called sparse file, and this gap doesn't fill all that space with zeros on disk.
+- When you read past file's end it will return EOF.
+- Use **select()** or **poll()** to sleep until a file or a group of files are available for reading or writing.
+- There are also **ppoll()** and **pselect()** with additional argument sigmask, I couldn't understand this argument and I will probably understand it after taking signals chapter.
